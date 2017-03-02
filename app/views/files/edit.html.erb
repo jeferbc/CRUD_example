@@ -1,0 +1,7 @@
+<h1 class="text-centered">Edit file</h1>
+<%= form_tag update_file_path, :method => :put do %>
+  <%= label_tag :content %>
+  <%= text_area_tag :content, @data %>
+  <%= link_to 'Cancel', files_path %>
+  <%= submit_tag 'Save File' %>
+<% end %>
