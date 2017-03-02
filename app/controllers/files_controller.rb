@@ -8,4 +8,15 @@ class FilesController < ApplicationController
     @file = params[:name]
     @data = File.read("#{Dir.pwd}/files/#{@file}")
   end
+
+  def new
+    @file = ''
+  end
+
+  def create
+    File.open("files/#{params['name']}", "w+") do |f|
+      f.write(params['content'])
+    end
+    redirect_to file_path(name: params['name'])
+  end
 end
