@@ -31,4 +31,9 @@ class FilesController < ApplicationController
     @file = params['name']
     @data = File.read("#{Dir.pwd}/files/#{@file}")
   end
+
+  def destroy
+    File.delete("files/#{params['name']}")
+    redirect_to files_path
+  end
 end
