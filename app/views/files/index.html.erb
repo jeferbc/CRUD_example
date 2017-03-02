@@ -10,7 +10,7 @@
         <% @files.each do |file| %>
         <tr>
           <td><%= file %></td>
-          <td></td>
+          <td><%= link_to 'view', file_path(file) %></td>
         </tr>
         <% end %>
       </table>
